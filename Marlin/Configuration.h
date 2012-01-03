@@ -4,8 +4,8 @@
 
 
 // This determines the communication speed of the printer
-#define BAUDRATE 250000
-//#define BAUDRATE 115200
+//#define BAUDRATE 250000
+#define BAUDRATE 115200
 //#define BAUDRATE 230400
 
 #define EXTRUDERS 1
@@ -29,7 +29,7 @@
 // Sanguinololu 1.2 and above = 62
 // Ultimaker = 7,
 // Teensylu = 8
-#define MOTHERBOARD 7
+#define MOTHERBOARD 90
 
 //===========================================================================
 //=============================Thermal Settings  ============================
@@ -44,14 +44,14 @@
 // 6 is EPCOS 100k
 // 7 is 100k Honeywell thermistor 135-104LAG-J01
 
-//#define THERMISTORHEATER_0 3
+#define THERMISTORHEATER_0 5
 //#define THERMISTORHEATER_1 1
 //#define THERMISTORHEATER_2 1
 
-//#define HEATER_0_USES_THERMISTOR
+#define HEATER_0_USES_THERMISTOR
 //#define HEATER_1_USES_THERMISTOR
 //#define HEATER_2_USES_THERMISTOR
-#define HEATER_0_USES_AD595
+//#define HEATER_0_USES_AD595
 //#define HEATER_1_USES_AD595
 //#define HEATER_2_USES_AD595
 
@@ -191,10 +191,10 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 #define ENDSTOPS_ONLY_FOR_HOMING // If defined the endstops will only be used for homing
 
 // For Inverting Stepper Enable Pins (Active Low) use 0, Non Inverting (Active High) use 1
-#define X_ENABLE_ON 0
-#define Y_ENABLE_ON 0
-#define Z_ENABLE_ON 0
-#define E_ENABLE_ON 0 // For all extruders
+#define X_ENABLE_ON 1
+#define Y_ENABLE_ON 1
+#define Z_ENABLE_ON 1
+#define E_ENABLE_ON 1 // For all extruders
 
 // Disables axis when it's not being used.
 #define DISABLE_X false
@@ -208,9 +208,9 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 //#define INVERT_Z_DIR false    // for Mendel set to false, for Orca set to true
 //#define INVERT_E*_DIR true   // for direct drive extruder v9 set to true, for geared extruder set to false, used for all extruders
 
-#define INVERT_X_DIR true    // for Mendel set to false, for Orca set to true
-#define INVERT_Y_DIR false    // for Mendel set to true, for Orca set to false
-#define INVERT_Z_DIR true     // for Mendel set to false, for Orca set to true
+#define INVERT_X_DIR false    // for Mendel set to false, for Orca set to true
+#define INVERT_Y_DIR true    // for Mendel set to true, for Orca set to false
+#define INVERT_Z_DIR false     // for Mendel set to false, for Orca set to true
 #define INVERT_E0_DIR false   // for direct drive extruder v9 set to true, for geared extruder set to false
 #define INVERT_E1_DIR false    // for direct drive extruder v9 set to true, for geared extruder set to false
 #define INVERT_E2_DIR false   // for direct drive extruder v9 set to true, for geared extruder set to false
@@ -243,9 +243,9 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 
 // default settings 
 
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {78.7402,78.7402,200*8/3,760*1.1}                    // default steps per unit for ultimaker 
+//#define DEFAULT_AXIS_STEPS_PER_UNIT   {78.7402,78.7402,200*8/3,760*1.1}                    // default steps per unit for ultimaker 
 //#define DEFAULT_AXIS_STEPS_PER_UNIT   {40, 40, 3333.92, 360} //sells mendel with v9 extruder
-//#define DEFAULT_AXIS_STEPS_PER_UNIT   {80.3232, 80.8900, 2284.7651, 757.2218} // SAE Prusa w/ Wade extruder
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80.3232, 80.8900, 2284.7651, 757.2218} // SAE Prusa w/ Wade extruder
 #define DEFAULT_MAX_FEEDRATE          {500, 500, 5, 45}    // (mm/sec)    
 #define DEFAULT_MAX_ACCELERATION      {9000,9000,100,10000}    // X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
