@@ -760,7 +760,7 @@
 #define Y_MAX_PIN          -1
 
 #define Z_STEP_PIN         26
-#define Z_DIR_PIN          27
+#define Z_DIR_PIN          25
 #define Z_ENABLE_PIN       24
 #define Z_MIN_PIN          2
 #define Z_MAX_PIN          -1
