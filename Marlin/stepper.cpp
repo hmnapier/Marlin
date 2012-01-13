@@ -447,34 +447,48 @@ ISR(TIMER1_COMPA_vect)
       counter_x += current_block->steps_x;
       if (counter_x > 0) {
         WRITE(X_STEP_PIN, HIGH);
-        counter_x -= current_block->step_event_count;
-        WRITE(X_STEP_PIN, LOW);
-        count_position[X_AXIS]+=count_direction[X_AXIS];   
       }
 
       counter_y += current_block->steps_y;
       if (counter_y > 0) {
         WRITE(Y_STEP_PIN, HIGH);
-        counter_y -= current_block->step_event_count;
-        WRITE(Y_STEP_PIN, LOW);
-        count_position[Y_AXIS]+=count_direction[Y_AXIS];
       }
 
       counter_z += current_block->steps_z;
       if (counter_z > 0) {
         WRITE(Z_STEP_PIN, HIGH);
-        counter_z -= current_block->step_event_count;
-        WRITE(Z_STEP_PIN, LOW);
-        count_position[Z_AXIS]+=count_direction[Z_AXIS];
       }
-
+    
       #ifndef ADVANCE
         counter_e += current_block->steps_e;
         if (counter_e > 0) {
           WRITE_E_STEP(HIGH);
+        }
+      #endif //!ADVANCE
+    
+      if (counter_x > 0) {
+        counter_x -= current_block->step_event_count;
+        count_position[X_AXIS]+=count_direction[X_AXIS];  
+        WRITE(X_STEP_PIN, LOW); 
+      }
+
+      if (counter_y > 0) {
+        counter_y -= current_block->step_event_count;
+        count_position[Y_AXIS]+=count_direction[Y_AXIS];
+        WRITE(Y_STEP_PIN, LOW);
+      }
+
+      if (counter_z > 0) {
+        counter_z -= current_block->step_event_count;
+        count_position[Z_AXIS]+=count_direction[Z_AXIS];
+        WRITE(Z_STEP_PIN, LOW);
+      }
+
+      #ifndef ADVANCE
+        if (counter_e > 0) {
           counter_e -= current_block->step_event_count;
-          WRITE_E_STEP(LOW);
           count_position[E_AXIS]+=count_direction[E_AXIS];
+          WRITE_E_STEP(LOW);
         }
       #endif //!ADVANCE
       step_events_completed += 1;  
