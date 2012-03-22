@@ -86,7 +86,11 @@
 
 #define AXIS_RELATIVE_MODES {false, false, false, false}
 
+#ifdef CONFIG_STEPPERS_TOSHIBA
+#define MAX_STEP_FREQUENCY 10000 // Max step frequency for Toshiba Stepper Controllers
+#else
 #define MAX_STEP_FREQUENCY 40000 // Max step frequency for Ultimaker (5000 pps / half step)
+#endif
 
 //default stepper release if idle
 #define DEFAULT_STEPPER_DEACTIVE_TIME 60
