@@ -1080,9 +1080,11 @@
 #define HEATER_2_PIN       -1
 #define TEMP_0_PIN          0 // ANALOG INPUT NUMBERING 
 #define TEMP_1_PIN          1 // ANALOG
-#define TEMP_2_PIN         -1 // 2
+#define TEMP_2_PIN         	2 // ANALOG -- used for Case fan
 #define HEATER_BED_PIN      4
 #define TEMP_BED_PIN        2 // 1,2 or I2C
+
+#define CONTROLLERFAN_SENSE_PIN		15
 
 #define I2C_SCL				16
 #define I2C_SDA				17

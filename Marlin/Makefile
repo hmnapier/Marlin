@@ -39,7 +39,7 @@
 #For Arduino Mega2560
 #MCU = atmega2560
 #For Sanguinololu
-MCU = atmega644p 
+MCU = atmega644
 
 # Here you select "arduino", "Sanguino", "Gen7", ...
 HARDWARE_VARIANT 		= Sanguino
@@ -63,7 +63,7 @@ endif
 
 # Be sure to regenerate speed_lookuptable.h with create_speed_lookuptable.py
 # if you are setting this to something other than 16MHz
-F_CPU = 16000000
+F_CPU = 20000000
 
 UPLOAD_RATE = 115200
 AVRDUDE_PROGRAMMER = arduino
