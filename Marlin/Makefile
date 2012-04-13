@@ -121,7 +121,7 @@ CXXINCS = ${patsubst %,-I%,${subst :, ,${VPATH}}}
 # c99   - ISO C99 standard (not yet fully implemented)
 # gnu99 - c99 plus GCC extensions
 #CSTANDARD = -std=gnu99
-CDEBUG = -g$(DEBUG)
+#CDEBUG = -g$(DEBUG)
 CWARN = -Wall -Wstrict-prototypes
 CTUNING = -funsigned-char -funsigned-bitfields -fpack-struct \
 	-fshort-enums -w -ffunction-sections -fdata-sections \
@@ -130,6 +130,9 @@ ifneq (${HARDWARE_MOTHERBOARD},)
 CTUNING += -DMOTHERBOARD=${HARDWARE_MOTHERBOARD}
 endif
 #CEXTRA = -Wa,-adhlns=$(<:.c=.lst)
+CEXTRA += -g -gdwarf-2
+CTUNING += 	-fno-inline-small-functions \
+			-Wl,--relax,--gc-sections
 
 CFLAGS = $(CDEBUG) $(CDEFS) $(CINCS) -O$(OPT) $(CWARN) $(CEXTRA) $(CTUNING)
 CXXFLAGS =         $(CDEFS) $(CINCS) -O$(OPT) -Wall    $(CEXTRA) $(CTUNING)
