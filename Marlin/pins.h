@@ -781,18 +781,18 @@
 #define SDSS               11
 #define SDCARDDETECT       -1 // 10 optional also used as mode pin
 #define LED_PIN            -1
-#define FAN_PIN            3
+#define FAN_PIN            4
 #define PS_ON_PIN          -1
 #define KILL_PIN           -1
 
-#define HEATER_0_PIN       4
+#define HEATER_0_PIN       3
 #define HEATER_1_PIN       -1 // 12 
 #define HEATER_2_PIN       -1 // 13
 #define TEMP_0_PIN          0 //D27   // MUST USE ANALOG INPUT NUMBERING NOT DIGITAL OUTPUT NUMBERING!!!!!!!!!
 #define TEMP_1_PIN         -1 // 1
 #define TEMP_2_PIN         -1 // 2
-#define HEATER_BED_PIN     -1 // 14/15
-#define TEMP_BED_PIN       -1 // 1,2 or I2C
+#define HEATER_BED_PIN     14 // 14/15
+#define TEMP_BED_PIN       1 // 1,2 or I2C
 /*  Unused (1) (2) (3) 4 5 6 7 8 9 10 11 12 13 (14) (15) (16) 17 (18) (19) (20) (21) (22) (23) 24 (25) (26) (27) 28 (29) (30) (31)  */
 
 #endif
@@ -801,30 +801,30 @@
 #define KNOWN_BOARD 1
 
 #ifndef __AVR_ATmega644P__
-#error Oops!  Make sure you have 'Sanguino' selected from the 'Tools -> Boards' menu.
+#error Oops!  Make sure you have 'OMC with Atmega644 at 20MHz' selected from the 'Tools -> Boards' menu.
 #endif
 
 #define X_STEP_PIN         26
 #define X_DIR_PIN          25
-#define X_ENABLE_PIN       -1
-#define X_MIN_PIN          -1
-#define X_MAX_PIN          0
+#define X_ENABLE_PIN       10
+#define X_MIN_PIN          0
+#define X_MAX_PIN          -1
 
 #define Y_STEP_PIN         28
 #define Y_DIR_PIN          27
-#define Y_ENABLE_PIN       -1
-#define Y_MIN_PIN          -1
-#define Y_MAX_PIN          1
+#define Y_ENABLE_PIN       10
+#define Y_MIN_PIN          1
+#define Y_MAX_PIN          -1
 
 #define Z_STEP_PIN         23
 #define Z_DIR_PIN          22
-#define Z_ENABLE_PIN       -1
-#define Z_MIN_PIN           -1
-#define Z_MAX_PIN           2
+#define Z_ENABLE_PIN       10
+#define Z_MIN_PIN          2
+#define Z_MAX_PIN          -1
 
-#define E0_STEP_PIN         21
-#define E0_DIR_PIN          20
-#define E0_ENABLE_PIN       24
+#define E0_STEP_PIN         24
+#define E0_DIR_PIN          21
+#define E0_ENABLE_PIN       10
 
 #define E1_STEP_PIN         -1 // 21
 #define E1_DIR_PIN          -1 // 20
@@ -838,18 +838,18 @@
 #define SDSS               11
 #define SDCARDDETECT       -1 // 10 optional also used as mode pin
 #define LED_PIN            3 // (PW1A) Assumes PW1B is doubling up for Heated bed
-#define FAN_PIN            15
+#define FAN_PIN            14
 #define PS_ON_PIN          -1
 #define KILL_PIN           -1
 
-#define HEATER_0_PIN       14
+#define HEATER_0_PIN       3
 #define HEATER_1_PIN       -1 // 12 
 #define HEATER_2_PIN       -1 // 13
 #define TEMP_0_PIN          0 //D27   // MUST USE ANALOG INPUT NUMBERING NOT DIGITAL OUTPUT NUMBERING!!!!!!!!!
-#define TEMP_1_PIN         -1 // 1
-#define TEMP_2_PIN         -1 // 2
-#define HEATER_BED_PIN     -1 // 4 (PW1B not PW1A)
-#define TEMP_BED_PIN       -1 // 1,2 or I2C
+#define TEMP_1_PIN          1
+#define TEMP_2_PIN          2
+#define HEATER_BED_PIN      4 // (PW1B not PW1A)
+#define TEMP_BED_PIN       2 // 1,2 or I2C
 /*  Unused (1) (2) (3) 4 5 6 7 8 9 10 11 12 13 (14) (15) (16) 17 (18) (19) (20) (21) (22) (23) 24 (25) (26) (27) 28 (29) (30) (31)  */
 
 #endif

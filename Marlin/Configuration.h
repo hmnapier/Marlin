@@ -29,7 +29,9 @@
 // Sanguinololu 1.2 and above = 62
 // Ultimaker = 7,
 // Teensylu = 8
-#define MOTHERBOARD 90
+// OMC Alpha = 90
+// OMC Beta = 91
+#define MOTHERBOARD 91
 
 //===========================================================================
 //=============================Thermal Settings  ============================
