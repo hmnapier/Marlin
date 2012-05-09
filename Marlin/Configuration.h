@@ -29,9 +29,11 @@
 // Ultimaker = 7
 // Teensylu = 8
 // Gen3+ =9
+// OMC Alpha = 90
+// OMC = 91
 
 #ifndef MOTHERBOARD
-#define MOTHERBOARD 7
+#define MOTHERBOARD 91
 #endif
 
 //===========================================================================
@@ -177,9 +179,7 @@ const bool Z_ENDSTOPS_INVERTING = true; // set to true to invert the logic of th
 #define HOMING_FEEDRATE {50*60, 50*60, 4*60, 0}  // set the homing speeds (mm/min)
 
 // default settings 
-//#define //DEFAULT_AXIS_STEPS_PER_UNIT   {79.87, 79.87, 2566, 563,78} // Al's TVRR
-//#define DEFAULT_AXIS_STEPS_PER_UNIT   {81.26, 80.01, 2561, 599.14} // Michel TVRR old
-#define DEFAULT_AXIS_STEPS_PER_UNIT   {80.00, 79.84, 2560, 599.14} // Michel TVRR
+#define DEFAULT_AXIS_STEPS_PER_UNIT   {80.00, 80.00, 2560, 599.14} // TVRR
 
 #ifndef DEFAULT_AXIS_STEPS_PER_UNIT
 #define DEFAULT_AXIS_STEPS_PER_UNIT   {78.7402,78.7402,200*8/3,760*1.1}                    // default steps per unit for ultimaker 
